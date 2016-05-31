@@ -1,7 +1,7 @@
 package com.thienq.webstore.service.impl;
 
 import com.thienq.webstore.domain.Customer;
-import com.thienq.webstore.jpa.CustomerJPARepository;
+import com.thienq.webstore.repository.CustomerJPARepository;
 import com.thienq.webstore.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.thienq.webstore.jpa;
+package com.thienq.webstore.repository;
 
 import com.thienq.webstore.domain.Product;
 import org.springframework.data.domain.Page;

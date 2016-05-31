@@ -1,4 +1,4 @@
-package com.thienq.webstore.jpa;
+package com.thienq.webstore.repository;
 
 import com.thienq.webstore.domain.Customer;
 import org.springframework.data.repository.CrudRepository;

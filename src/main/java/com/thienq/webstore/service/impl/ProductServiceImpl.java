@@ -1,7 +1,7 @@
 package com.thienq.webstore.service.impl;
 
 import com.thienq.webstore.domain.Product;
-import com.thienq.webstore.jpa.ProductJPARepository;
+import com.thienq.webstore.repository.ProductJPARepository;
 import com.thienq.webstore.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

@@ -1,7 +1,7 @@
 package com.thienq.webstore.service.impl;
 
 import com.thienq.webstore.domain.Category;
-import com.thienq.webstore.jpa.CategoryJPARepository;
+import com.thienq.webstore.repository.CategoryJPARepository;
 import com.thienq.webstore.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
