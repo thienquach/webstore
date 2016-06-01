@@ -12,6 +12,7 @@ import java.util.Map;
 @Table(name="product")
 public class Product extends AbstractEntity {
 
+	@Column(nullable = false)
 	private String code;
 
 	@Column(nullable = false)
@@ -40,18 +41,18 @@ public class Product extends AbstractEntity {
 	 * @param unitPrice
 	 *            must not be {@literal null} or less than or equal to zero.
 	 */
-	public Product(String code, String name, BigDecimal unitPrice) {
+	public Product(String code, String name, Category category, BigDecimal unitPrice) {
+		Assert.hasText(code, "Code must not be null or empty");
 		Assert.hasText(name, "Name must not be null or empty");
+		Assert.notNull(category, "Category must not be null");
 		Assert.isTrue(BigDecimal.ZERO.compareTo(unitPrice) < 0,
 				"Price must be greater than zero");
 		this.code = code;
 		this.name = name;
+		this.category = category;
 		this.unitPrice = unitPrice;
 	}
 
-	public Product(String name, BigDecimal unitPrice) {
-		this(null, name, unitPrice);
-	}
 
 	public Product() {
 	}

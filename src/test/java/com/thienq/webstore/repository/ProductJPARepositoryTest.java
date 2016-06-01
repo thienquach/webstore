@@ -35,9 +35,8 @@ public class ProductJPARepositoryTest {
         categoryRepository.save(category);
         assertNotNull(category.getId());
 
-        Product product = new Product("P1234", "Samsung Galaxy S5", new BigDecimal(400.0));
+        Product product = new Product("P1234", "Samsung Galaxy S5", category, new BigDecimal(400.0));
         product.setDescription("A new innovation");
-        product.setCategory(category);
 
         //save product, verify has ID value after save
         assertNull(product.getId());    //null before save
