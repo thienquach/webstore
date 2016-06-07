@@ -30,7 +30,15 @@
 			<definition template="products"/>
 		</put-attribute>
 	</definition>
-	
+
+	<definition name="product" extends="baseLayout">
+		<put-attribute name="title" value="Store"/>
+		<put-attribute name="heading" value="Product"/>
+		<put-attribute name="tagline" value="All available products"/>
+		<put-attribute name="content">
+			<definition template="product"/>
+		</put-attribute>
+	</definition>
 	<!--<definition name="management/product_management" extends="baseLayout">-->
 		<!--<put-attribute name="title" value="Store"/>-->
 		<!--<put-attribute name="heading" value="Product"/>-->

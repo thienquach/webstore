@@ -10,9 +10,9 @@
                     <h3 th:text="${product.name }"></h3>
                     <p th:text="${product.category.name }"></p>
                     <p th:text="${product.unitPrice }">USD</p>
-                    <p th:text="'Available ' + ${product.unitsInStock } +' units in stock'"></p>
+                    <p>Available <span th:text="${product.unitsInStock }" th:remove="tag"/> <span th:text="${product.unitsInStock > 1} ? 'units' : 'unit'"/> in stock</p>
                     <p>
-                        <a href="#" class="btn btn-primary">
+                        <a href="#" th:href="@{/product(code=${product.code})}" class="btn btn-primary">
                             <span class="glyphicon-info-sign glyphicon"/> Details
                         </a>
                     </p>

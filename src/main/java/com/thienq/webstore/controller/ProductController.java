@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-@RequestMapping("/products")
 public class ProductController {
 
 	@Autowired
@@ -22,18 +21,16 @@ public class ProductController {
 	@Autowired
 	private CategoryService categoryService;
 
-	@RequestMapping
+	@RequestMapping("/products")
 	public String list(Model model) {
 		model.addAttribute("products", productService.findAll());
 
 		return "products";
 	}
 
-	@RequestMapping("/all")
+	@RequestMapping("/products/all")
 	public String allProducts(Model model) {
-		model.addAttribute("products", productService.findAll());
-
-		return "products";
+		return list(model);
 	}
 
 	@RequestMapping("/{category}")
