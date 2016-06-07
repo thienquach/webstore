@@ -1,15 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-
-</head>
-
 <body>
-<section class="container">
+<section id="main" class="container">
     <!--/*@thymesVar id="products" type="List<Product>*/-->
-    <div class="row" th:each="product : ${products}">
-        <div class="col-sm-6 col-md-3" style="padding-bottom: 15px;">
+    <div class="row">
+        <div class="col-sm-6 col-md-3" style="padding-bottom: 15px;" th:each="product : ${products}">
             <div class="thumbnail">
                 <div class="caption">
                     <h3 th:text="${product.name }"></h3>

@@ -14,17 +14,21 @@
 	
 	<!--  -->
 	<definition name="index" extends="baseLayout">
-		<put-attribute name="title" value="Store"/>
+		<put-attribute name="title" value="Store" />
 		<put-attribute name="heading" value="Welcome"/>
 		<put-attribute name="tagline" value="The one and only amazing store"/>
-		<put-attribute name="content" value="products"/>
+		<put-attribute name="content">
+			<definition template="index"/>
+		</put-attribute>
 	</definition>
 	
 	<definition name="products" extends="baseLayout">
 		<put-attribute name="title" value="Store"/>
 		<put-attribute name="heading" value="Product"/>
 		<put-attribute name="tagline" value="All available products"/>
-		<put-attribute name="content" value="classpath:/templates/products"/>
+		<put-attribute name="content">
+			<definition template="products"/>
+		</put-attribute>
 	</definition>
 	
 	<!--<definition name="management/product_management" extends="baseLayout">-->

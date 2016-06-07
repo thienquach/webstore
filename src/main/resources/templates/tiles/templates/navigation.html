@@ -1,7 +1,7 @@
-<html xmlns:spring="http://www.springframework.org/tags">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:spring="http://www.springframework.org/tags">
 
-<li><a href="<spring:url value='/'/>">Home</a></li>
-<li><a href="<spring:url value='/products/'/>">Products</a></li>
-<li><a href="<spring:url value='/products/add'/>">Add Product</a></li>
-<li><a href="<spring:url value='/cart/'/>">Cart</a></li>
+<li><a href="#" th:href="@{/index}">Home</a></li>
+<li><a href="#" th:href="@{/products}">Products</a></li>
+<li><a href="#" th:href="@{/products/add}">Add Product</a></li>
+<li><a href="#" th:href="@{/cart}">Cart</a></li>
 </html>
