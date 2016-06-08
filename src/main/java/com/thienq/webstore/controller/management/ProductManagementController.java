@@ -37,7 +37,7 @@ public class ProductManagementController {
 	
 	@RequestMapping
 	public String getAddNewProductForm(Model model, @RequestParam(required=false, defaultValue="0") String page ){
-		Pageable pageable = new PageRequest( Math.max(0, Integer.parseInt(page) - 1), 5, Direction.DESC, "lastUpdatedDate");
+		Pageable pageable = new PageRequest( Math.max(0, Integer.parseInt(page) - 1), 5, Direction.DESC, "lastUpdatedDate", "id");
 		Page<Product> productPage = productService.findAll(pageable);
 		model.addAttribute("productPage", productPage);
 		

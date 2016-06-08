@@ -39,10 +39,12 @@
 			<definition template="product"/>
 		</put-attribute>
 	</definition>
-	<!--<definition name="management/product_management" extends="baseLayout">-->
-		<!--<put-attribute name="title" value="Store"/>-->
-		<!--<put-attribute name="heading" value="Product"/>-->
-		<!--<put-attribute name="tagline" value="All available products"/>-->
-		<!--<put-attribute name="content" value="classpath:/templates/management/product_management.jsp"/>-->
-	<!--</definition>-->
+	<definition name="management/product_management" extends="baseLayout">
+		<put-attribute name="title" value="Store"/>
+		<put-attribute name="heading" value="Product"/>
+		<put-attribute name="tagline" value="All available products"/>
+		<put-attribute name="content">
+			<definition template="management/product_management"/>
+		</put-attribute>
+	</definition>
 </tiles-definitions>

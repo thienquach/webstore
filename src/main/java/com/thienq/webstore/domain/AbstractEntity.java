@@ -1,9 +1,6 @@
 package com.thienq.webstore.domain;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -16,8 +13,11 @@ public class AbstractEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	
+
+	@Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP", insertable = false, updatable = false)
 	private Date createdDate;
+
+	@Version
 	private Date lastUpdatedDate;
 
 	public Long getId() {
