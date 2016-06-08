@@ -8,6 +8,7 @@
 				lastUrl=@{/management/products(page=${productPage.totalPages})}">
 	<nav>
 		<ul class="pagination">
+			<!-- First and Previous buttons -->
 			<th:block th:switch="${currentIndex}" >
 				<th:block th:case="1">
 					<li class=""><a href="#">&laquo;</a></li>
@@ -19,6 +20,7 @@
 					<li><a href="#" th:href="@{${prevUrl}}">&lt;</a></li>
 				</th:block>
 			</th:block>
+			<!-- Page number buttons -->
 			<th:block th:each="i : ${#numbers.sequence(beginIndex, endIndex)}" >
 				<th:block th:switch="${currentIndex}" th:with="pageUrl=@{/management/products(page=${i})}">
 					<th:block th:case="${i}">
@@ -29,6 +31,7 @@
 					</th:block>
 				</th:block>
 			</th:block>
+			<!-- Last and Next buttons -->
 			<th:block th:switch="${currentIndex}" >
 				<th:block th:case="${productPage.totalPages}">
 					<li class="disabled"><a href="#">&gt;</a></li>
@@ -165,15 +168,14 @@
 <!-- end AddEditModal -->
 
 <script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.12.4/jquery.min.js"
+	th:src="@{/webjars/jquery/2.2.4/jquery.min.js}"></script>
 <script
-	src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	src="//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+	th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}"></script>
 <script
-	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js">
-<!--
-	
-//-->
-</script>
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"
+	th:src="@{/webjars/angularjs/1.5.5/angular.min.js}"></script>
 
 </html>
 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"
+	  xmlns:th="http://www.thymeleaf.org" xmlns:tiles="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initialscale=1.0"/>
+<title tiles:string="title"></title>
+<link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+	  th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}" rel="stylesheet"/>
+</head>
+
+<body>
+	<div tiles:replace="navigation"/>
+	<div class="container">
+		<div class="header">
+			<ul class="nav nav-pills pull-right">
+
+			</ul>
+			<h3 class="text-muted">Web Store</h3>
+		</div>
+		<div class="jumbotron">
+			<h1>
+				<div tiles:string="heading"/>
+			</h1>
+			<p>
+				<div tiles:string="tagline"/>
+			</p>
+		</div>
+		
+		<div class="row">
+			<div tiles:include="content"/>
+		</div>
+		
+		<div class="footer">
+			<div tiles:replace="footer"/>
+		</div>
+	</div>
+</body>
+</html>
