@@ -126,26 +126,26 @@
                 </dependencies>
             </plugin>
 
-            <!--<plugin>-->
-                <!--<groupId>org.lesscss</groupId>-->
-                <!--<artifactId>lesscss-maven-plugin</artifactId>-->
-                <!--<version>1.7.0.1.1</version>-->
-                <!--<configuration>-->
-                    <!--<sourceDirectory>${project.basedir}/src/resources/static/less</sourceDirectory>-->
-                    <!--<outputDirectory>${project.build.directory}/${project.build.finalName}/css</outputDirectory>-->
-                    <!--<compress>true</compress>-->
-                    <!--&lt;!&ndash;<includes>&ndash;&gt;-->
-                        <!--&lt;!&ndash;<include>main.less</include>&ndash;&gt;-->
-                    <!--&lt;!&ndash;</includes>&ndash;&gt;-->
-                <!--</configuration>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<goals>-->
-                            <!--<goal>compile</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>org.lesscss</groupId>
+                <artifactId>lesscss-maven-plugin</artifactId>
+                <version>1.7.0.1.1</version>
+                <configuration>
+                    <sourceDirectory>${project.basedir}/src/main/resources/static/less</sourceDirectory>
+                    <outputDirectory>target/classes/static/css</outputDirectory>
+                    <compress>true</compress>
+                    <!--<includes>-->
+                        <!--<include>main.less</include>-->
+                    <!--</includes>-->
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
