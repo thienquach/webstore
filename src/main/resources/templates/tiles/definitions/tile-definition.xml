@@ -42,8 +42,8 @@
 
 	<!-- Management Base Layout -->
 	<definition name="managementBaseLayout"  template="tiles/templates/management_base_layout">
-		<put-attribute name="title" value="sample-title"/>
-		<put-attribute name="heading" value=""/>
+		<put-attribute name="title" value="Management"/>
+		<put-attribute name="heading" value="Store Management"/>
 		<put-attribute name="tagline" value=""/>
 		<put-attribute name="navigation" value="tiles/templates/navigation"/>
 		<put-attribute name="content" value=""/>
@@ -51,9 +51,7 @@
 	</definition>
 
 	<definition name="management/product_management" extends="managementBaseLayout">
-		<put-attribute name="title" value="Store"/>
-		<put-attribute name="heading" value="Product"/>
-		<put-attribute name="tagline" value="All available products"/>
+		<put-attribute name="tagline" value="Products"/>
 		<put-attribute name="navigation" value="tiles/templates/_management_nav_bar"/>
 		<put-attribute name="content">
 			<definition template="management/product_management"/>

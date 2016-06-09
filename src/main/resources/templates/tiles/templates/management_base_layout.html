@@ -14,20 +14,11 @@
 	<div tiles:replace="navigation"/>
 	<div class="container">
 		<div class="header">
-			<ul class="nav nav-pills pull-right">
+			<h5 class="text-muted" tiles:string="heading"></h5>
+			<h3 style="margin: 0" tiles:string="tagline"></h3>
+		</div>
 
-			</ul>
-			<h3 class="text-muted">Web Store</h3>
-		</div>
-		<div class="jumbotron">
-			<h1>
-				<div tiles:string="heading"/>
-			</h1>
-			<p>
-				<div tiles:string="tagline"/>
-			</p>
-		</div>
-		
+
 		<div class="row">
 			<div tiles:include="content"/>
 		</div>
