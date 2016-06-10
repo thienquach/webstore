@@ -1,31 +1,34 @@
 <!DOCTYPE html>
 <html lang="en"
-	  xmlns:th="http://www.thymeleaf.org" xmlns:tiles="http://www.thymeleaf.org">
+      xmlns:th="http://www.thymeleaf.org" xmlns:tiles="http://www.thymeleaf.org">
 <head>
-<meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initialscale=1.0"/>
-<title tiles:string="title"></title>
-<link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.6/css/bootstrap.min.css"
-	  th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}" rel="stylesheet"/>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initialscale=1.0"/>
+    <title tiles:string="title"></title>
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}" rel="stylesheet"/>
+    <link href="/css/mangement.css"
+          th:href="@{/css/management.css}" rel="stylesheet"/>
 </head>
 
 <body>
-	<div tiles:replace="navigation"/>
-	<div class="container">
-		<div class="header">
-			<h5 class="text-muted" tiles:string="heading"></h5>
-			<h3 style="margin: 0" tiles:string="tagline"></h3>
-		</div>
+<div tiles:replace="navigation"/>
+
+<div class="container">
+    <div class="header">
+        <h5 class="text-muted" tiles:string="heading"></h5>
+        <h3 style="margin: 0" tiles:string="tagline"></h3>
+    </div>
 
 
-		<div class="row">
-			<div tiles:include="content"/>
-		</div>
-		
-		<div class="footer">
-			<div tiles:replace="footer"/>
-		</div>
-	</div>
+    <div class="row">
+        <div tiles:include="content"/>
+    </div>
+
+    <div class="footer">
+        <div tiles:replace="footer"/>
+    </div>
+</div>
 </body>
 </html>

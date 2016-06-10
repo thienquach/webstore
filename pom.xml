@@ -59,6 +59,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
@@ -69,11 +70,19 @@
             <artifactId>jquery</artifactId>
             <version>2.2.4</version>
         </dependency>
+
+        <!-- https://github.com/codedance/jquery.AreYouSure/blob/master/demo/are-you-sure-demo.html -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery_are-you-sure</artifactId>
+            <version>1.9.0</version>
+        </dependency>
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>angularjs</artifactId>
             <version>1.5.5</version>
         </dependency>
+
 
         <!-- Developer Tool http://docs.spring.io/spring-boot/docs/current/reference/pdf/spring-boot-reference.pdf#page=52&zoom=auto,72,771.024 -->
         <dependency>
