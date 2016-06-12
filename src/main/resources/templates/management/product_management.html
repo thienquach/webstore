@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <script src="http://js.nicedit.com/nicEdit-latest.js"></script>
-
+    <link href="/bootstrap-fileinput/css/fileinput.min.css"
+        th:href="@{/bootstrap-fileinput/css/fileinput.min.css}" rel="stylesheet"/>
 </head>
 
 <section class="container"
@@ -165,6 +165,14 @@
                             </label>
                         </div>
                     </div>
+                    <!-- File upload -->
+                    <div class="form-group">
+                        <label class="control-label col-lg-3 col-md-4 col-sm-4 ">
+                            File </label>
+                        <div class="col-lg-9 col-md-8 col-sm-8 ">
+                            <input id="images" name="images" class="file" type="file" multiple="multiple" accept="image/*"/>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="modal-footer">
@@ -182,6 +190,12 @@
         src="https://ajax.googleapis.com/ajax/libs/jquery/2.12.4/jquery.min.js"
         th:src="@{/webjars/jquery/2.2.4/jquery.min.js}"></script>
 <script
+    src="/bootstrap-fileinput/js/fileinput.min.js"
+    th:src="@{/bootstrap-fileinput/js/fileinput.min.js}"></script>
+<script
+        src="/bootstrap-fileinput/themes/fa/fa.js"
+        th:src="@{/bootstrap-fileinput/themes/fa/fa.js}"></script>
+<script
         src="//netdna.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
         th:src="@{/webjars/bootstrap/3.3.6/js/bootstrap.min.js}"></script>
 <script
@@ -190,11 +204,28 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.AreYouSure/1.9.0/jquery.are-you-sure.min.js"
         th:src="@{/webjars/jquery_are-you-sure/1.9.0/jquery.are-you-sure.js}"></script>
 
+
 <script>
+    //Initialize File Input
+    $(document).ready(function(){
+        $("#images").fileinput({
+            uploadUrl: "/file-upload-batch/2",
+            browseLabel: 'Select files...',
+            previewFileIcon: '<i class="fa fa-file"></i>',
+            purifyHtml: true,
+            previewFileIconSettings:{
+                'jpg': '<i class="fa fa-file-photo-o text-warning"></i>',
+            },
+            previewFileExtSettings:{
+                'jpg': function(ext) {
+                    return ext.match(/(jp?g|png|gif|bmp)$/i);
+                }
+            },
+            
+        });
+    });
 
     //initialize AreYouSure plugin
-
-
     $('#addEditForm').areYouSure({
         change: function () {
             // Enable save button only if the form is dirty. i.e. something to save.
