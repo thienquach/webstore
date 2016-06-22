@@ -50,11 +50,19 @@
 		<put-attribute name="footer" value="tiles/templates/footer"/>
 	</definition>
 
-	<definition name="management/product_management" extends="managementBaseLayout">
+	<definition name="management/products" extends="managementBaseLayout">
 		<put-attribute name="tagline" value="Products"/>
 		<put-attribute name="navigation" value="tiles/templates/_management_nav_bar"/>
 		<put-attribute name="content">
-			<definition template="management/product_management"/>
+			<definition template="management/products"/>
+		</put-attribute>
+	</definition>
+
+	<definition name="management/add_product" extends="managementBaseLayout">
+		<put-attribute name="tagline" value="Products"/>
+		<put-attribute name="navigation" value="tiles/templates/_management_nav_bar"/>
+		<put-attribute name="content">
+			<definition template="management/add_product"/>
 		</put-attribute>
 	</definition>
 </tiles-definitions>

@@ -36,7 +36,7 @@ public class ProductManagementController {
 	}
 	
 	@RequestMapping
-	public String getAddNewProductForm(Model model, @RequestParam(required=false, defaultValue="0") String page ){
+	public String showAllProducts(Model model, @RequestParam(required=false, defaultValue="0") String page ){
 		Pageable pageable = new PageRequest( Math.max(0, Integer.parseInt(page) - 1), 5, Direction.DESC, "lastUpdatedDate", "id");
 		Page<Product> productPage = productService.findAll(pageable);
 		model.addAttribute("productPage", productPage);
@@ -45,20 +45,25 @@ public class ProductManagementController {
 		int beginIndex = Math.max(1, currentIndex - 5);
 		int endIndex = Math.min(beginIndex + 10, productPage.getTotalPages());
 		
-		Map<String, String> pageAtributes = new HashMap<>();
-		pageAtributes.put("currentIndex", String.valueOf(currentIndex));
-		pageAtributes.put("beginIndex", String.valueOf(beginIndex));
-		pageAtributes.put("endIndex", String.valueOf(endIndex));
+		Map<String, String> pageAttributes = new HashMap<>();
+		pageAttributes.put("currentIndex", String.valueOf(currentIndex));
+		pageAttributes.put("beginIndex", String.valueOf(beginIndex));
+		pageAttributes.put("endIndex", String.valueOf(endIndex));
 		
-		model.addAllAttributes(pageAtributes);
-		
+		model.addAllAttributes(pageAttributes);
+
+		return "management/products";
+	}
+
+	@RequestMapping(value="/add", method = RequestMethod.GET)
+	public String getAddNewProductForm(Model model){
 		Product newProduct = new Product();
 		model.addAttribute("newProduct", newProduct);
-			
+
 		model.addAttribute("categories", categoryService.findAll());
-		return "management/product_management";
+		return "management/add_product";
 	}
-	
+
 	@RequestMapping(value="/add", method = RequestMethod.POST)
 	public String processAddNewProductForm(@ModelAttribute("newProduct") Product newProduct, BindingResult result){
 		//Check if the FormBean contains disallowed fields from WebDataBinder
