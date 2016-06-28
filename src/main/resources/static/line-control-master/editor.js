@@ -10,6 +10,7 @@ You should have received a copy of the GNU General Public License along with thi
 
 (function( $ ){
 	var editorObj;
+	var isBindToSelector;
 	var methods = {
 		saveSelection: function() {
 			//Function to save the text selection range from the editor
@@ -353,7 +354,7 @@ You should have received a copy of the GNU General Public License along with thi
 			return tableElement;
 		},
 
-		init : function( options )
+		init : function( options, mode )
 		{
 			var fonts = { "Sans serif"	 : "arial,helvetica,sans-serif",
 						  "Serif"	 	 : "times new roman,serif",
@@ -1031,7 +1032,13 @@ You should have received a copy of the GNU General Public License along with thi
 					$(editor_Content).data("statusBar").html('<div class="label">'+'Words : '+wordCount+'</div>');
 					$(editor_Content).data("statusBar").append('<div class="label">'+'Characters : '+charCount+'</div>');
             	});
-	        }	        
+	        }
+
+			if(isBindToSelector){
+				editor.on("keyup focus", function(event) {
+					$(editor_Content).html(editor_Content.data("editor").html());
+				});
+			}
 	       	
 	       	
 	       	for(var item in menuItems){
@@ -1596,7 +1603,12 @@ You should have received a copy of the GNU General Public License along with thi
 			else{
 				document.execCommand("styleWithCSS", null, true);
 			}
-		},				
+		},
+
+		bindToSelector: function(){
+			isBindToSelector = true;
+			return methods.init.apply(this, arguments);
+		}
 
 	}
 

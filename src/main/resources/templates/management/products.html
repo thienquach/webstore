@@ -67,7 +67,7 @@
             <th>Product Name</th>
             <th>Category</th>
             <th>Unit Price</th>
-            <th>Description</th>
+            <th>Action</th>
         </tr>
         </thead>
         <tbody>
@@ -78,7 +78,9 @@
                 <td th:text="${product.name }"></td>
                 <td th:text="${product.category.name }"></td>
                 <td th:text="${product.unitPrice }"></td>
-                <td th:text="${product.description }"></td>
+                <td>
+                    <a th:text="View" th:href="@{/management/products/{code}/(code = ${product.code})}" class="btn btn-default"/>
+                </td>
             </tr>
         </th:block>
 

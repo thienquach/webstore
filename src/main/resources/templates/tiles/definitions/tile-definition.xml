@@ -58,6 +58,14 @@
 		</put-attribute>
 	</definition>
 
+	<definition name="management/product" extends="managementBaseLayout">
+		<put-attribute name="tagline" value="Products"/>
+		<put-attribute name="navigation" value="tiles/templates/_management_nav_bar"/>
+		<put-attribute name="content">
+			<definition template="management/product"/>
+		</put-attribute>
+	</definition>
+
 	<definition name="management/add_product" extends="managementBaseLayout">
 		<put-attribute name="tagline" value="Products"/>
 		<put-attribute name="navigation" value="tiles/templates/_management_nav_bar"/>

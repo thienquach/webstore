@@ -13,53 +13,33 @@
       method="post" class="form-horizontal">
     <div class="modal-body">
         <!-- Product Code -->
-        <div class="form-group">
-            <label class="control-label col-lg-3 col-md-4 col-sm-4 "
-                   for="code"> Product Code </label>
-            <div class="col-lg-9 col-md-8 col-sm-8 ">
-                <input id="code" th:field="*{code}" type="text"
-                       class="form-control"/>
-            </div>
+        <div class="col-lg-12">
+            <label class="control-label" for="code"> Product Code </label>
+            <input id="code" th:field="*{code}" type="text" class="form-control"/>
         </div>
         <!-- Product Category -->
-        <div class="form-group">
-            <label class="control-label col-lg-3 col-md-4 col-sm-4 "
-                   for="category"> Category </label>
-            <div class="col-lg-9 col-md-8 col-sm-8 ">
-
-                <select id="category" th:field="*{category}" class="form-control">
-                    <option th:each="category : ${categories }" th:value="${category.id}"
-                            th:text="${category.name}"/>
-
-                </select>
-            </div>
+        <div class="col-lg-2">
+            <label class="control-label" for="category"> Category</label>
+            <select id="category" th:field="*{category}" class="form-control">
+                <option th:each="category : ${categories }" th:value="${category.id}" th:text="${category.name}"/>
+            </select>
         </div>
         <!-- Product Name -->
-        <div class="form-group">
-            <label class="control-label col-lg-3 col-md-4 col-sm-4 "
-                   for="name"> Product Name </label>
-            <div class="col-lg-9 col-md-8 col-sm-8 ">
-                <input id="name" th:field="*{name}" type="text"
-                       class="form-control"/>
-            </div>
+        <div class="col-lg-5">
+            <label class="control-label" for="name"> Product Name</label>
+            <input id="name" th:field="*{name}" type="text" class="form-control"/>
         </div>
         <!-- Unit Price -->
-        <div class="form-group">
-            <label class="control-label col-lg-3 col-md-4 col-sm-4 "
-                   for="unitPrice"> Unit Price </label>
-            <div class="col-lg-9 col-md-8 col-sm-8 ">
-                <input id="unitPrice" th:field="*{unitPrice}" type="text"
-                       class="form-control"/>
-            </div>
+        <div class="col-lg-5">
+            <label class="control-label" for="unitPrice"> Unit Price </label>
+            <input id="unitPrice" th:field="*{unitPrice}" type="text" class="form-control"/>
         </div>
         <!-- Description -->
-        <div class="form-group">
-            <label class="control-label col-lg-3 col-md-4 col-sm-4 "
+        <div class="col-lg-12">
+            <label class="control-label"
                    for="description"> Description </label>
-            <div class="col-lg-9 col-md-8 col-sm-8 ">
-							<textarea id="description" th:field="*{description}"  rows="2" style="width: 100%;"
-                                      class="form-control"/>
-            </div>
+            <textarea id="description" th:field="*{description}" rows="2" style="width: 100%;"
+                      class="form-control"/>
         </div>
         <!-- Condition -->
         <div class="form-group">
@@ -79,17 +59,17 @@
         </div>
         <!-- File upload -->
         <!--<div class="form-group">-->
-            <!--<label class="control-label col-lg-3 col-md-4 col-sm-4 ">-->
-                <!--File </label>-->
-            <!--<div class="col-lg-9 col-md-8 col-sm-8 ">-->
-                <!--<input id="images" name="images" class="file" type="file" multiple="multiple" accept="image/*"/>-->
-            <!--</div>-->
+        <!--<label class="control-label col-lg-3 col-md-4 col-sm-4 ">-->
+        <!--File </label>-->
+        <!--<div class="col-lg-9 col-md-8 col-sm-8 ">-->
+        <!--<input id="images" name="images" class="file" type="file" multiple="multiple" accept="image/*"/>-->
+        <!--</div>-->
         <!--</div>-->
     </div>
 
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="submit" id="btnAdd" class="btn btn-primary" disabled="disabled"
-                th:text="Add" th:onclick="return alert ('abc')"></button>
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <button type="submit" id="btnAdd" class="btn btn-primary" disabled="disabled"
+            th:text="Add"></button>
 </form>
 </body>
 <script
@@ -114,7 +94,7 @@
 
 <script>
 
-    $(document).ready(function(){
+    $(document).ready(function () {
         //Initialize File Input
 //        $("#images").fileinput({
 //            uploadUrl: "/file-upload-batch/2",
@@ -131,8 +111,8 @@
 //            },
 //
 //        });
-
-        $("#description").Editor();
+//        $("#description").Editor();
+        $("#description").Editor("bindToSelector");
 
     });
 

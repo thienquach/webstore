@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<section class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <h3 th:text="${product.name }"></h3>
+            <p th:text="${product.description }"></p>
+            <p>
+                <strong>Item code: </strong>
+                <span class="label label-warning" th:text="${product.code }"></span>
+            </p>
+            <!--<p th:inline="text">-->
+            <!--<strong>manufacturer</strong> : [[${#strings.toString(product.manufacturer)}]]-->
+            <!--</p>-->
+            <p>
+                <strong>manufacturer</strong> : <span th:text="${product.manufacturer}" th:remove="tag" />
+            </p>
+            <p>
+                <strong>category</strong> : <span th:text="${product.category.name}" th:remove="tag" />
+            </p>
+            <p>
+                <strong>Available units in stock </strong> :  <span th:text="${product.unitsInStock}" th:remove="tag" />
+            </p>
+            <h4><span th:text="${product.unitPrice}" th:remove="tag" /> USD</h4>
+            <p>
+                <a href="#" th:href="@{/products}" class="btn btn-default">
+                    <span class="glyphicon-hand-left glyphicon"></span> Back
+                </a>
+                <a href="#" class="btn btn-warning btn-large"> <span
+                        class="glyphicon-shopping-cart glyphicon"></span> Order Now
+                </a>
+            </p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
