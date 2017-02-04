@@ -1,4 +1,4 @@
-package com.thienq.webstore.controller.management;
+package com.thienq.webstore.management.controller;
 
 import com.thienq.webstore.domain.Category;
 import com.thienq.webstore.domain.Product;
@@ -61,7 +61,7 @@ public class ProductManagementController {
 		
 		model.addAllAttributes(pageAttributes);
 
-		return "management/products";
+		return "managementProducts";
 	}
 
 	@RequestMapping(value="/add", method = RequestMethod.GET)
@@ -70,7 +70,7 @@ public class ProductManagementController {
 		model.addAttribute("newProduct", newProduct);
 
 		model.addAttribute("categories", categoryService.findAll());
-		return "management/add_product";
+		return "managementAddProduct";
 	}
 
 	@RequestMapping(value="/add", method = RequestMethod.POST)
@@ -102,7 +102,7 @@ public class ProductManagementController {
 			}
 		}
 		productService.addProduct(newProduct);
-		return "redirect:/management/products";
+		return "redirect:/managementProducts";
 	}
 
 	@RequestMapping(value = "/{code}", method = RequestMethod.GET)
@@ -111,6 +111,6 @@ public class ProductManagementController {
 
 		model.addAttribute("product", product);
 
-		return "management/product";
+		return "managementProduct";
 	}
 }

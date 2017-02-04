@@ -11,8 +11,9 @@
 		<put-attribute name="content" value=""/>
 		<put-attribute name="footer" value="tiles/templates/footer"/>
 	</definition>
+	<!-- end Base Layout -->
 	
-	<!--  -->
+	<!-- User Layout -->
 	<definition name="index" extends="baseLayout">
 		<put-attribute name="title" value="Store" />
 		<put-attribute name="heading" value="Welcome"/>
@@ -39,38 +40,41 @@
 			<definition template="product"/>
 		</put-attribute>
 	</definition>
+	<!-- end User Layout -->
 
-	<!-- Management Base Layout -->
-	<definition name="managementBaseLayout"  template="tiles/templates/management_base_layout">
+	<!-- Management Layout -->
+	<definition name="managementBaseLayout"  template="tiles/templates/management/base_layout">
 		<put-attribute name="title" value="Management"/>
 		<put-attribute name="heading" value="Store Management"/>
 		<put-attribute name="tagline" value=""/>
-		<put-attribute name="navigation" value="tiles/templates/navigation"/>
+		<put-attribute name="navigation" value="tiles/templates/management/navigation"/>
 		<put-attribute name="content" value=""/>
 		<put-attribute name="footer" value="tiles/templates/footer"/>
 	</definition>
 
-	<definition name="management/products" extends="managementBaseLayout">
+	<definition name="managementProducts" extends="managementBaseLayout">
 		<put-attribute name="tagline" value="Products"/>
-		<put-attribute name="navigation" value="tiles/templates/_management_nav_bar"/>
+		<put-attribute name="navigation" value="tiles/templates/management/navigation"/>
 		<put-attribute name="content">
 			<definition template="management/products"/>
 		</put-attribute>
 	</definition>
 
-	<definition name="management/product" extends="managementBaseLayout">
+	<definition name="managementProduct" extends="managementBaseLayout">
 		<put-attribute name="tagline" value="Products"/>
-		<put-attribute name="navigation" value="tiles/templates/_management_nav_bar"/>
+		<put-attribute name="navigation" value="tiles/templates/management/navigation"/>
 		<put-attribute name="content">
 			<definition template="management/product"/>
 		</put-attribute>
 	</definition>
 
-	<definition name="management/add_product" extends="managementBaseLayout">
+	<definition name="managementAddProduct" extends="managementBaseLayout">
 		<put-attribute name="tagline" value="Products"/>
-		<put-attribute name="navigation" value="tiles/templates/_management_nav_bar"/>
+		<put-attribute name="navigation" value="tiles/templates/management/navigation"/>
 		<put-attribute name="content">
 			<definition template="management/add_product"/>
 		</put-attribute>
 	</definition>
+	<!-- end Management Layout -->
+	
 </tiles-definitions>
